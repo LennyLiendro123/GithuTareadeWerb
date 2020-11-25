@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script src="js/storage.js"></script>
+<head>
+
+<script>
+      function initMap() {
+        var latlng = {lat: -17.3307882, lng: -66.2274833};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: latlng
+        });
+        var marker = new google.maps.Marker({
+        position: latlng,
+        dragabbke: true,
+        title:'Cinepolis'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhSB8uNGaHXbedDXBRBnChLBNLo6KGrt4&callback=initMap">
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+<link rel="stylesheet" href="pro.css" />
+<link rel="stylesheet" href="Estilo.css" />
+    <link rel="stylesheet" type="text/css" href="css/estiloregistrar.css">
+<body>
+<script type="text/javascript">
+            /*1) Definir Las Variables Correspondintes*/
+            var opt_1 = new Array ("-", "Cine Center ", "Ic Norte", "Cine Capitol");
+            var opt_2 = new Array ("-", "Cine Avaroa", "Astor", "Cine Center");
+            var opt_3 = new Array ("-", "CIne Norte", "Cine Center", " Cine opera");
+            
+            /* 2) crear una funcion que permita ejecutar el cambio dinamico*/
+            
+            function cambia(){
+                var cosa;
+                /*Se toma el vamor de la "cosa seleccionada"*/
+                cosa = document.formulario1.cosa[document.formulario1.cosa.selectedIndex].value;
+                /*se chequea si la "cosa" esta definida*/
+                if(cosa!=0){
+                    //selecionamos las cosas Correctas
+                    mis_opts=eval("opt_" + cosa);
+                    //se calcula el numero de cosas
+                    num_opts=mis_opts.length;
+                    //marco el numero de opt en el select
+                    document.formulario1.opt.length = num_opts;
+                    //para cada opt del array, la pongo en el select
+                    for(i=0; i<num_opts; i++){
+                        document.formulario1.opt.options[i].value=mis_opts[i];
+                        document.formulario1.opt.options[i].text=mis_opts[i];
+                    }
+                    }else{
+                        //si no habia ninguna opt seleccionada, elimino las cosas del select
+                        document.formulario1.opt.length = 1;
+                        //ponemos un guion en la unica opt que he dejado
+                        document.formulario1.opt.options[0].value="-";
+                        document.formulario1.opt.options[0].text="-";
+                    }
+                    //hacer un reset de las opts
+                    document.formulario1.opt.options[0].selected = true;
+                    
+                }
+            
+            function vali()
+        {
+            var formOK=true;
+            var mensaje="ERRORES: \n\n";
+            /*validar nombre*/
+            var nombre=document.getElementById("nom").value;
+            if(nombre.length<2)
+            {
+                mensaje=mensaje+"El nombre es muy corto.\n";
+                formOK=false;       
+            }
+            
+                /*validar apellido*/
+            var apelli=document.getElementById("apelli").value;
+            if(apelli.length<3)
+            {
+                mensaje=mensaje+"El apellido muy corto\n";
+                formOK=false;       
+            }
+            
+            /*validar email*/
+            var email=document.getElementById("email").value;
+            if(email=="")
+            {
+                mensaje=mensaje+"El Email está vacío.\n";
+                formOK=false;
+            }
+            
+            var expresion=/^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+            if(!expresion.test(email))
+            {
+                mensaje=mensaje+"Email inválido.\n";
+                formOK=false;
+            }
+                /*validar contraseña*/
+            var contra=document.getElementById("contra").value;
+            if(contra.length<8)
+            {
+                mensaje=mensaje+"La contraseña debe tener minimo 8 caracteres .\n";
+                formOK=false;       
+            }
+            /*Validar Fecha de Nacimiento*/
+            var naci=document.getElementById("fecha").value;
+            if(naci=="")
+            {
+                mensaje=mensaje+"No seleccionó una Fecha.\n";
+                formOK=false;
+            }
+            
+            if(formOK==false)
+            {
+                alert(mensaje);
+            }
+            else
+            {
+                alert("Formulario OK");
+                return formOK;
+            }
+        }
+        
+function enlaces()
+{
+    var ciudad=document.getElementById("ciud").value;
+            if(ciudad=="Cochabamba")
+            {
+                var cine=document.getElementById("cine").value;
+                    if(cine=="Cine Center")
+                    {
+                        url: "http://www.cinecenter.com.bo/"
+                
+                    }
+                    else if(cine=="Ic Norte")
+                    {
+                          location.href="http://www.cinenorte.com/";
+                    }
+                    else 
+                        {
+                              location.href="http://www.boliviaentusmanos.com/cartelera/ciudad/cochabamba.html";
+                        }
+                
+            }
+
+ 
+ }
+        
+            
+        </script>
+
+
+
+
+
+
+<header>
+<nav class="logo"> 
+<img  class="imagenlogo"src="logo.png" width="186" height="55">
+
+ <form name="formulario1" action="#" >
+			<select class="seleccion" name="cosa" id="ciud" onchange="cambia()">
+				<option value="0">Seleccione
+				<option value="1">Cochabamba
+				<option value="2">Santa Cruz
+				<option value="3">La Paz
+			</select>
+
+		<button  onclick="return enlaces();">Ver Cine </button>
+  
+ 
+   <a href="iniciar.html" class="open"><img  class="imgreg" src="Imagenes cartelera/Imagenes cartelera/Promociones/icon-ID.png" width="40" height="40" />
+Iniciar Sesíon</a>
+
+			<section id="openmodal" class="modalDialog">
+				<section class="modal">
+					<a href="#" class="close"> X </a>
+					<h2>Registrar</h2>
+                  
+</nav>
+
+ <input type="checkbox" id="btn-menu">
+ <label for="btn-menu"><img src="list.png" width="37" height="37"></label>
+ <nav class="menu"> 
+ <ul>
+ <li><a href="index.html">Menu</a>
+          <ul class="mini">
+                     <li><a href="Proximos estrenos.html">Próximos estrenos</a></li>
+                     <li><a href="Platino.html">Platino </a></li>
+                     <li><a href="#">Preventas </a></li> 
+                     <li><a href="https://www.imax.com/es/content/imax-difference">Mas informacion de IMAX</a></li>
+                     <li><a href="#">Promociones </a></li>
+                     <li><a href="4D.html">4D </a></li>          
+          </ul>
+     </li>
+     <li><a href="index.html">Cartelera </a></li>
+     <li><a href="Proximos estrenos.html">Próximos estrenos </a></li>
+      
+     <li><a href="EXTREMO.html"> Cinepolis Extremo </a></li>
+     <li><a href="Platino.html">Platino </a></li>
+     <li><a href="4D.html">4D </a></li>
+     <li><a href="https://www.imax.com/es/content/imax-difference">IMAX</a></li>
+ </ul>
+ </nav>
+
+</header>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+<aside>
+
+<div class="cuerpoR">
+    <div class="loginBox">
+    
+    
+   <div class="cuerpoR">
+            <div class="loginBox">
+
+     <h2> Sé un cliente VIP </h2>
+     <form>
+       <p> Nombre Usuario</p>
+        <input type="text" id="nom"  placeholder="Introduce tus nombres" />
+      
+        <p> Contraseña </p>
+        <input type="password" id="contra" name="password" pattern="[A-Za-z0-9]+" placeholder="Introduce tu contraseña"  />
+        
+        <button class="b1" onclick="validar()" type="button"> Iniciar Sesión </button>
+        <a href="registro.html"> <button class="b2" type="button"> Registrar</button></a>
+        
+
+    </form>  
+</div>
+</div> 
+  
+
+</div>
+
+
+</aside>
+
+ 
+
+ <footer>
+  	<div class="f1">
+     <h3 align="center"> Nuestras Redes  </h3> 
+    <section class="iconos" >
+    <a href="https://www.facebook.com/"><div class="rede" id="facebook">
+     <img class="icone" src="images/facebook.png" />
+    </div></a>
+    <a href="https://twitter.com"> <div class="rede" id="twitter">
+     <img class="icone" src="images/twitter.png" />
+    </div></a>
+    <a href="https://www.instagram.com"> <div class="rede" id="instagram">
+     <img class="icone" src="images/instagram.png" />
+    </div></a>
+    <a href="https://www.snapchat.com/l/es/">  <div class="rede" id="snap">
+     <img class="icone" src="images/snap.png" />
+    </div></a>
+    <a href="https://plus.google.com/"><div class="rede" id="plus">
+     <img class="icone" src="images/plus.png" />
+    </div></a>
+    <a href="https://www.youtube.com"> <div class="rede" id="youtube">
+     <img class="icone" src="images/youtube.png" />
+    </div></a>
+  </section>
+  
+ </div>
+    
+    <div class="f2">
+   
+     <h3>Telefonos</h3>
+
+<p>Teléfono Fijo:
+0261-9354501</p>
+
+
+<p>Celulares: 
+0412-470.33.68
+0412-444.97.14</p>
+<a href="https://es-la.facebook.com/siropebebidasnaturalesysnacks/"> <div class="rede">
+     <img class="lopu" src="logos de publicidad/sirope logo.png" />
+    </div></a>
+    <a href="http://www.heladospil.com.bo/"> <div class="rede">
+     <img class="lopu" src="logos de publicidad/logo-helados-pil-header.png" />
+    </div></a><br /><br />
+<br />
+
+
+    <a href="https://www.starbucks.com/"> <div class="rede">
+     <img class="lopu" src="logos de publicidad/Starbucks_Coffee_Logo.svg.png" />
+    </div></a>
+    <a href="http://www.bk.com"> <div class="rede">
+     <img class="lopu" src="logos de publicidad/2000px-Burger_King_Logo.svg.png" />
+    </div></a>
+       
+   
+      
+   </div>
+  
+    <div class="f3"> 
+    <h3  align="center" >Ubicanos	</h3>
+  <div id="map"></div>
+    </div>
+    </footer>
+<p style="color: #D8CECE; background-color: #5E5E5E;" class="pe">Contenido del sitio 2017  Cinépolis® ©MADE IN Bolivia©</p>
+<script type="text/javascript">
+  var divmapa = document.getElementById('map');
+  function initMap()
+  { //opciones del mapa
+    var options = 
+    {
+      zoom:15, // menor = +lejos   mayor = +cerca
+      center:{lat:-17.380471, lng: -66.151457}// latitud, longitud
+    }// nuevo mapa que dibuja el mapa
+    //-17.380980, -66.155161
+    var map = new google.maps.Map(divmapa, options);
+    //agregando un marcador
+    var parque={lat:-17.380471, lng: -66.151457};
+    var marker = new google.maps.Marker({
+      position: parque, 
+      map : map,
+      
+    });
+    //agregar ventana de Info al Marcador
+    var infoWindow = new google.maps.InfoWindow({
+      content: '<h1></h1>'
+    });
+    marker.addListener('click', function(){
+      infoWindow.open(map,marker);
+    });
+    google.maps.event.trigger(marker,'click'); //la burbuja se activa al cargar la pagina
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTcQ4yNd2AeeXine1Kl3Y1sBKIe1qJ0Ro&callback=initMap"
+    async defer>
+      //AIzaSyBZHa-mKAVUBPxv5L4y1Oi6TMC3C9nkHJQ (mi API)
+</script>
+</body>
+</html>

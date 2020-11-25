@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+.info 
+{
+	width:100%;
+	margin: auto;
+	height:300px;
+	margin-bottom: 50px;
+}
+.imapeli
+{
+	width: 20%;
+	float: left;
+	padding: 15px 15px;
+}
+.texpeli
+{
+	color:#CCC;
+	background-color:#454545;
+	width: 50%;
+	float: left;
+	padding: 15px 15px;
+}
+.texpeli h4
+{
+	color:#FC3;
+}
+.hopeli
+{
+	color:#CCC;
+	background-color:#454545;
+	width: 50%;
+	float: left;
+	padding: 15px 15px;
+}
+.hopeli h4
+{
+	color:#FE7073;
+}
+.hopeli h5
+{
+	color:#4DC1EE;
+	
+}
+
+	
+	

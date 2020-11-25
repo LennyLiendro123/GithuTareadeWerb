@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<script>
+      function initMap() {
+        var latlng = {lat: -17.3307882, lng: -66.2274833};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: latlng
+        });
+        var marker = new google.maps.Marker({
+        position: latlng,
+        dragabbke: true,
+        title:'Universidad Privada del Valle'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhSB8uNGaHXbedDXBRBnChLBNLo6KGrt4&callback=initMap">
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+<link rel="stylesheet" href="pro.css" />
+<link rel="stylesheet" href="Estilo.css" />
+
+<body>
+<header>
+<nav class="logo"> 
+<img  class="imagenlogo"src="logo.png" width="186" height="55">
+
+ <form name="formulario1" action="#" >
+			<select class="seleccion" name="cosa" id="ciud" onchange="cambia()">
+				<option value="0">Seleccione
+				<option value="1">Cochabamba
+				<option value="2">Santa Cruz
+				<option value="3">La Paz
+				
+			</select>
+
+		<button  onclick="return enlaces();">Ver Cine </button>
+  
+ 
+   <a href="#openmodal" class="open"><img  class="imgreg" src="Imagenes cartelera/Imagenes cartelera/Promociones/icon-ID.png" width="40" height="40" />
+Iniciar Sesíon</a>
+
+			<section id="openmodal" class="modalDialog">
+				<section class="modal">
+					<a href="#" class="close"> X </a>
+					<h2>Registrar</h2>
+                    
+				<section>
+<div class="cuerpoR">
+	<div class="loginBox">
+	<img class="user" />
+    
+   
+    	<p> Nombre(s)</p>
+        <input type="text" id="nom"  placeholder="Introduce tus nombres" />
+        <p> Apellidos</p>
+        <input type="text" id="apelli"  placeholder="Introduce tus apellidos" />
+    	<p> Email </p>
+        <input type="email" id="email" name="email" placeholder="Introduce tu e-mail"  />
+        <p> Contraseña </p>
+        <input type="password" id="contra" name="password" pattern="[A-Za-z0-9]+" placeholder="Introduce tu contraseña"  />
+        <p> Fecha de nacimiento </p>
+        <input type="date"  id="fecha" name="fecha_naci" step="1" min="1956-01-01" max="2017-11-30"  value="">
+        <button class="" type="submit"  onclick="return vali();"> ENVIAR </button>
+  
+
+</div>
+  </section>
+  
+
+</nav>
+
+
+ <input type="checkbox" id="btn-menu">
+ <label for="btn-menu"><img src="list.png" width="37" height="37"></label>
+ <nav class="menu"> 
+ <ul>
+ <li><a href="index.html">Menu</a>
+          <ul class="mini">
+                       <li><a href="Proximos estrenos.html">Próximos estrenos</a></li>
+                     <li><a href="Platino.html">Platino </a></li>
+                     <li><a href="#">Preventas </a></li> 
+                     <li><a href="https://www.imax.com/es/content/imax-difference">Mas informacion de IMAX</a></li>
+                     <li><a href="#">Promociones </a></li>
+                     <li><a href="4D.html">4D </a></li>
+                    
+                    
+          </ul>
+     </li>
+     
+     
+     <li><a href="index.html">Cartelera </a></li>
+     <li><a href="Proximos estrenos.html">Próximos estrenos </a></li>
+      
+     <li><a href="EXTREMO.html"> Cinepolis Extremo </a></li>
+     <li><a href="Platino.html">Platino </a></li>
+     <li><a href="4D.html">4D </a></li>
+     <li><a href="https://www.imax.com/es/content/imax-difference">IMAX</a></li>
+ </ul>
+ </nav>
+
+</header>
+<br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+
+ <section class="info">
+     <div class="imapeli"><img src="Imagenes cartelera/7D9.jpg" height="440"  /></div>
+       <div class="texpeli"> <p> <h4>Sinopsis de:EL planeta de los simios la guerra</h4>
+        	<br />
+            En EL PLANETA DE LOS SIMIOS: LA GUERRA, el tercer capítulo de la aclamada y exitosa franquicia, Cesar y sus simios se ven obligados a encararse en un conflicto mortal con un ejército de humanos liderados por un coronel despiadado. </p></div><br />
+
+
+            <div class="hopeli"> <p> 
+        	<br /><h4>AVISO:</h4>
+           <h5> LOS HORARIOS ESTAN SUJETOS A CAMBIOS</h5><br />
+
+HORARIOS PARA SALAS NORMALES: <br />
+
+DOBLADA: 11:15/13:00/13:45/15:30/16:15/18:00/18:45/20:30/21:15/23:00/ Vier-Sab 23:45<br />
+
+HORARIOS PARA SALAS 3D: 
+DOBLADA: 12:20/14:50/17:20/19:50/22:20/ Vier-Sab 00:50<br />
+
+HORARIOS PARA SALAS VIP: 
+Horario no disponible. </p></div>
+            
+      </section>
+
+
+
+
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lAsru0CsBWI" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+ <footer>
+  	<div class="f1">
+     <h3 align="center"> Nuestras Redes  </h3> 
+    <section class="iconos" >
+    <a href="https://www.facebook.com/"><div class="rede" id="facebook">
+     <img class="icone" src="images/facebook.png" />
+    </div></a>
+    <a href="https://twitter.com"> <div class="rede" id="twitter">
+     <img class="icone" src="images/twitter.png" />
+    </div></a>
+    <a href="https://www.instagram.com"> <div class="rede" id="instagram">
+     <img class="icone" src="images/instagram.png" />
+    </div></a>
+    <a href="https://www.snapchat.com/l/es/">  <div class="rede" id="snap">
+     <img class="icone" src="images/snap.png" />
+    </div></a>
+    <a href="https://plus.google.com/"><div class="rede" id="plus">
+     <img class="icone" src="images/plus.png" />
+    </div></a>
+    <a href="https://www.youtube.com"> <div class="rede" id="youtube">
+     <img class="icone" src="images/youtube.png" />
+    </div></a>
+  </section>
+  
+ </div>
+    
+    <div class="f2">
+   
+     <h3>Telefonos</h3>
+
+<p>Teléfono Fijo:
+0261-9354501</p>
+
+
+<p>Celulares: 
+0412-470.33.68
+0412-444.97.14</p>
+<a href="https://es-la.facebook.com/siropebebidasnaturalesysnacks/"> <div class="rede">
+     <img class="lopu" src="logos de publicidad/sirope logo.png" />
+    </div></a>
+    <a href="http://www.heladospil.com.bo/"> <div class="rede">
+     <img class="lopu" src="logos de publicidad/logo-helados-pil-header.png" />
+    </div></a><br /><br />
+<br />
+
+
+    <a href="https://www.starbucks.com/"> <div class="rede">
+     <img class="lopu" src="logos de publicidad/Starbucks_Coffee_Logo.svg.png" />
+    </div></a>
+    <a href="http://www.bk.com"> <div class="rede">
+     <img class="lopu" src="logos de publicidad/2000px-Burger_King_Logo.svg.png" />
+    </div></a>
+       
+   
+      
+   </div>
+  
+    <div class="f3"> 
+    <h3  align="center" >Ubicanos	</h3>
+  <div id="map"></div>
+    </div>
+    </footer>
+<p style="color: #D8CECE; background-color: #5E5E5E;" class="pe">Contenido del sitio 2017  Cinépolis® ©MADE IN Bolivia©</p>
+
+
+<script type="text/javascript">
+  var divmapa = document.getElementById('map');
+  function initMap()
+  { //opciones del mapa
+    var options = 
+    {
+      zoom:15, // menor = +lejos   mayor = +cerca
+      center:{lat:-17.380471, lng: -66.151457}// latitud, longitud
+    }// nuevo mapa que dibuja el mapa
+    //-17.380980, -66.155161
+    var map = new google.maps.Map(divmapa, options);
+    //agregando un marcador
+    var parque={lat:-17.380471, lng: -66.151457};
+    var marker = new google.maps.Marker({
+      position: parque, 
+      map : map,
+      
+    });
+    //agregar ventana de Info al Marcador
+    var infoWindow = new google.maps.InfoWindow({
+      content: '<h1></h1>'
+    });
+    marker.addListener('click', function(){
+      infoWindow.open(map,marker);
+    });
+    google.maps.event.trigger(marker,'click'); //la burbuja se activa al cargar la pagina
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTcQ4yNd2AeeXine1Kl3Y1sBKIe1qJ0Ro&callback=initMap"
+    async defer>
+      //AIzaSyBZHa-mKAVUBPxv5L4y1Oi6TMC3C9nkHJQ (mi API)
+</script>
+</body>
+</html>
